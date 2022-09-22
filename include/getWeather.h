@@ -7,18 +7,14 @@
 This example learns how to get weather information
 */
 
-
-
-
-
 //Fill in the API Key you got
 String openWeatherMapApiKey = "4de305d0a52ddaceaecba50a757e9968";
 //Example:
 //String openWeatherMapApiKey = "4de305d0a52ddaceaecba50a757e9968";
 
 // Fill in your city name and country abbreviation
-String city = "ChengDu";
-String countryCode = "CN";
+String city = "Johannesburg";
+String countryCode = "ZA";
 
 //Example：
 //String city = "ChengDu";
@@ -65,7 +61,7 @@ String httpGETRequest(const char* serverName) {
   return payload;
 }
 
-void findWeather() {
+void getweather() {
   //Send HTTP get request
   
     //Check if WIFI is connected

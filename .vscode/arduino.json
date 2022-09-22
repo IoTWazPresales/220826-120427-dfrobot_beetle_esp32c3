@@ -1,6 +1,6 @@
 {
     "port": "COM3",
-    "configuration": "CDCOnBoot=cdc,PartitionScheme=default,CPUFreq=160,FlashMode=qio,FlashFreq=80,FlashSize=4M,UploadSpeed=921600,DebugLevel=none",
+    "configuration": "CDCOnBoot=cdc,PartitionScheme=default,CPUFreq=160,FlashMode=qio,FlashFreq=80,FlashSize=4M,UploadSpeed=115200,DebugLevel=none",
     "board": "esp32:esp32:dfrobot_beetle_esp32c3",
     "programmer": "esp32:esptool"
 }
