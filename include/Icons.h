@@ -1,4 +1,4 @@
-
+#ifndef ICONS_H
 #define ICONS_H
 
 
@@ -194,3 +194,5 @@ const unsigned char gImage_16[128] PROGMEM= { /* 0X20,0X01,0X20,0X00,0X20,0X00, 
 0XFE,0XFC,0XFF,0X0F,0XFE,0XFC,0XFF,0X07,0XFE,0XFC,0XFF,0X03,0X7C,0XFC,0XFF,0X01,
 };
 const unsigned char *gImage[16] = {gImage_1,gImage_2,gImage_3,gImage_4,gImage_5,gImage_6,gImage_7,gImage_8,gImage_9,gImage_10,gImage_11,gImage_12,gImage_13,gImage_14,gImage_15,gImage_16};
+
+#endif
