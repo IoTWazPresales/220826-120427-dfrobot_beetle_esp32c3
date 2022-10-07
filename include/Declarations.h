@@ -4,7 +4,7 @@
 
 #include "Arduino.h"
 #include "ESP32Time.h"
-#include <FS.h>
+#include "FS.h"
 #include "Icons.h"
 #include "getTime.h"
 #include "getWeather.h"
@@ -13,7 +13,11 @@
 #include "ESP32Time.h"
 #include "pages.h"
 #include "string.h"
-#include "mqttbroker.h"
+#include "buttons.h"
 #include "drawing.h"
-#include "connectBLE.h"
+
+#include "EEPROM.h"
+#include "health.h"
+
+
 #endif

@@ -6,9 +6,10 @@
 #include <WiFi.h>
 #include <PubSubClient.h>
 #include <Wire.h>
+#include "mqttbroker.h"
 
 
-const char *mqtt_broker = "broker.mqttdashboard.com";
+const char *mqtt_broker = "test.mosquitto.org";
 const char *topic = "esp32/test";
 const char *mqtt_username = "eliasonw";
 const char *mqtt_password = "public";

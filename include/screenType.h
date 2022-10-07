@@ -23,7 +23,6 @@
 #endif
 
 
-
 DFRobot_ST7789_240x320_HW_SPI screen(/*dc=*/TFT_DC,/*cs=*/TFT_CS,/*rst=*/TFT_RST);
 
 DFRobot_UI ui(&screen, NULL);
