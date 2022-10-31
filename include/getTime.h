@@ -22,7 +22,7 @@ void printLocalTime()
 void gettime()
 {
     connectToWifi();
-    configTime(gmtOffset_sec, daylightOffset_sec, ntpServer);// After the acquisition is successful, the chip will use the RTC clock to keep the time updated
+    configTime PROGMEM(gmtOffset_sec, daylightOffset_sec, ntpServer);// After the acquisition is successful, the chip will use the RTC clock to keep the time updated
     printLocalTime();
     //WiFi.disconnect(true);
     //WiFi.mode(WIFI_OFF);

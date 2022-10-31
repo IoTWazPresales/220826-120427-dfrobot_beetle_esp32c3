@@ -3,8 +3,8 @@
 
 #include <WiFi.h>
 
-const char *ssid = "Yebo";    //WIFI name
-const char *password = "Amer1ca15"; //WIFI password
+const char *ssid = "kronos";    //WIFI name
+const char *password = "Cursed4252!"; //WIFI password
 uint32_t notConnectedCounter = 0;
 
 void connectToWifi(){

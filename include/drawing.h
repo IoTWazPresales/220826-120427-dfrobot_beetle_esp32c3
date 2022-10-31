@@ -6,14 +6,13 @@
 
 
 int drawsecond = rtc.getSecond();
-
 int drawhours = rtc.getHour();
 
 
 void refreshhours()
 {
-    screen.drawRect(((w/2)-(24*8)/2),/*y=*/h/2,(24*2),30,COLOR_RGB565_BLACK);
-    screen.fillRect(((w/2)-(24*8)/2),/*y=*/h/2,(24*2),30,COLOR_RGB565_BLACK);
+    tft.drawRect(((w/2)-(24*8)/2),/*y=*/h/2,(24*2),30,ST77XX_BLACK);
+    tft.fillRect(((w/2)-(24*8)/2),/*y=*/h/2,(24*2),30,ST77XX_BLACK);
 
 }
 
@@ -22,8 +21,8 @@ void refreshhours()
 void refreshminutes()
 {
    int drawminutes = rtc.getMinute();
-     screen.drawRect(((w/2)-(24*8)/2)*4,/*y=*/h/2,(24*2),30,COLOR_RGB565_BLACK);
-    screen.fillRect(((w/2)-(24*8)/2)*4,/*y=*/h/2,(24*2),30,COLOR_RGB565_BLACK);
+     tft.drawRect(((w/2)-(24*8)/2)*4,/*y=*/h/2,(24*2),30,ST77XX_BLACK);
+    tft.fillRect(((w/2)-(24*8)/2)*4,/*y=*/h/2,(24*2),30,ST77XX_BLACK);
     if(drawminutes==59)
       {
         delay(60000);
@@ -37,8 +36,8 @@ void refreshseconds()
 {
 
     int drawsecond = rtc.getSecond();
-    screen.drawRect(((w/2)-(24*8)/2)*7,/*y=*/h/2,(24*2),30,COLOR_RGB565_BLACK);
-    screen.fillRect(((w/2)-(24*8)/2)*7,/*y=*/h/2,(24*2),30,COLOR_RGB565_BLACK);
+    tft.drawRect(((w/2)-(24*8)/2)*7,/*y=*/h/2,(24*2),30,ST77XX_BLACK);
+    tft.fillRect(((w/2)-(24*8)/2)*7,/*y=*/h/2,(24*2),30,ST77XX_BLACK);
     
       if(drawsecond<1)
       {
@@ -47,15 +46,15 @@ void refreshseconds()
       }
         
     
-    //screen.drawRect(); 
+    //tft.drawRect(); 
 
 
 }
 
 void refreshhoursAw()
 {
-    screen.drawRect((w-((2*6)*8)),/*y=*/0,(24*2),30,COLOR_RGB565_BLACK);
-    screen.fillRect((w-((2*6)*8)),/*y=*/0,(24*2),30,COLOR_RGB565_BLACK);
+    tft.drawRect((w-((2*6)*8)),/*y=*/0,(24*2),30,ST77XX_BLACK);
+    tft.fillRect((w-((2*6)*8)),/*y=*/0,(24*2),30,ST77XX_BLACK);
 
 }
 
@@ -64,8 +63,8 @@ void refreshhoursAw()
 void refreshminutesAw()
 {
    int drawminutes = rtc.getMinute();
-     screen.drawRect((w-((2*6)*6)),/*y=*/0,(24*2),30, BLACK_RGB565);
-     screen.fillRect((w-((2*6)*6)),/*y=*/0,(24*2),30, BLACK_RGB565);
+     tft.drawRect((w-((2*6)*6)),/*y=*/0,(24*2),30, ST77XX_BLACK);
+     tft.fillRect((w-((2*6)*6)),/*y=*/0,(24*2),30, ST77XX_BLACK);
     if(drawminutes==59)
       {
         delay(60000);
@@ -79,8 +78,8 @@ void refreshsecondsAw()
 {
 
     int drawsecond = rtc.getSecond();
-    screen.drawRect((w-((2*6)*3)),/*y=*/0,(24*2),30,COLOR_RGB565_BLACK);
-    screen.fillRect(w-((2*6)*3),/*y=*/0,(24*2),30,COLOR_RGB565_BLACK);
+    tft.drawRect((w-((2*6)*3)),/*y=*/0,(24*2),30,ST77XX_BLACK);
+    tft.fillRect(w-((2*6)*3),/*y=*/0,(24*2),30,ST77XX_BLACK);
     
       if(drawsecond<1)
       {
@@ -89,7 +88,7 @@ void refreshsecondsAw()
       }
         
     
-    //screen.drawRect(); 
+    //tft.drawRect(); 
 
 
 }

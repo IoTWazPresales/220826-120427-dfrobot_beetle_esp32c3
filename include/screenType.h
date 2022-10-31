@@ -1,30 +1,49 @@
 #ifndef SCREENTYPE
 #define SCREENTYPE
 
-#include "DFRobot_UI.h"
-#include "DFRobot_GDL.h"  
+  
+#include <Adafruit_GFX.h>         // Core graphics library
+#include "Adafruit_ST7789.h"    // Hardware-specific library
+#include "Adafruit_ST77xx.h"
 
+#include <SPI.h>
 
-#if defined ARDUINO_SAM_ZERO
-#define TFT_DC  7
-#define TFT_CS  5
-#define TFT_RST 6
-/*ESP32 and ESP8266*/
-#elif defined(ESP32) || defined(ESP8266)
-#define TFT_DC 1
-#define TFT_CS 7
-#define TFT_RST 2
-#define TFT_BL 10
-/*AVR series mainboard*/
+#ifdef ADAFRUIT_HALLOWING
+  #define TFT_CS        39 // Hallowing display control pins: chip select
+  #define TFT_RST       37 // Display reset
+  #define TFT_DC        38 // Display data/command select
+  #define TFT_BACKLIGHT  7 // Display backlight pin
+
+#elif defined(ARDUINO_FEATHER_ESP32) // Feather Huzzah32
+  #define TFT_CS         14
+  #define TFT_RST        15
+  #define TFT_DC         32
+
+#elif defined(ESP8266)
+  #define TFT_CS         4
+  #define TFT_RST        16                                            
+  #define TFT_DC         5
+
 #else
-#define TFT_DC  2
-#define TFT_CS  3
-#define TFT_RST 4
+  // For the breakout board, you can use any 2 or 3 pins.
+  // These pins will also work for the 1.8" TFT shield.
+  #define TFT_CS        2
+  #define TFT_RST       3 // Or set to -1 and connect to Arduino RESET pin
+  #define TFT_DC        8
 #endif
 
+#define SerialDebugging true
 
-DFRobot_ST7789_240x320_HW_SPI screen(/*dc=*/TFT_DC,/*cs=*/TFT_CS,/*rst=*/TFT_RST);
+// OPTION 1 (recommended) is to use the HARDWARE SPI pins, which are unique
+// to each board and not reassignable. For Arduino Uno: MOSI = pin 11 and
+// SCLK = pin 13. This is the fastest mode of operation and is required if
+// using the breakout board's microSD card.
 
-DFRobot_UI ui(&screen, NULL);
+// For 1.44" and 1.8" TFT with ST7735 (including HalloWing) use:
+Adafruit_ST7789 tft = Adafruit_ST7789(TFT_CS, TFT_DC, TFT_RST);
+
+
+
+
 
 #endif

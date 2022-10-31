@@ -1,7 +1,6 @@
-
 #include "connectWifi.h"
 #include "HTTPClient.h"
-
+#include "screenType.h"
 #include <ArduinoJson.h>
 #include "HTTP_Method.h"
 /*
@@ -79,161 +78,161 @@ String httpGETRequest(const char* serverName) {
 
 
 
-void clearScreen()
+void cleartft()
 {
-    screen.fillScreen(BLACK_RGB565);
+    tft.fillScreen(ST77XX_BLACK);
 }
 
 
 
 void drawTheSun()
 {
-    screen.fillCircle(64,80,26,YELLOW_RGB565);
+    tft.fillCircle(64,80,26,ST77XX_YELLOW);
 }
 
 void drawTheFullMoon()
 {
-    screen.fillCircle(64,80,26,LIGHTGREY_RGB565);
+    tft.fillCircle(64,80,26,ST77XX_WHITE);
 }
 
 void drawTheMoon()
 {
-    screen.fillCircle(64,80,26,LIGHTGREY_RGB565);
-    screen.fillCircle(75,73,26,BLACK_RGB565);
+    tft.fillCircle(64,80,26,ST77XX_WHITE);
+    tft.fillCircle(75,73,26,ST77XX_BLACK);
 }
 
 
 
 void drawLightRain()
 {
-     screen.drawBitmap(0,35,cloud,128,90,LIGHTGREY_RGB565);
-     screen.fillRoundRect(50, 105, 3, 13, 1, BLUE_RGB565);
-     screen.fillRoundRect(65, 105, 3, 13, 1, BLUE_RGB565);
-     screen.fillRoundRect(80, 105, 3, 13, 1, BLUE_RGB565);
+     tft.drawBitmap(0,35,cloud,128,90,ST77XX_WHITE);
+     tft.fillRoundRect(50, 105, 3, 13, 1, ST77XX_BLUE);
+     tft.fillRoundRect(65, 105, 3, 13, 1, ST77XX_BLUE);
+     tft.fillRoundRect(80, 105, 3, 13, 1, ST77XX_BLUE);
 }
 
 void drawModerateRain()
 {
-     screen.drawBitmap(0,35,cloud,128,90,LIGHTGREY_RGB565);
-     screen.fillRoundRect(50, 105, 3, 15, 1, BLUE_RGB565);
-     screen.fillRoundRect(57, 102, 3, 15, 1, BLUE_RGB565);
-     screen.fillRoundRect(65, 105, 3, 15, 1, BLUE_RGB565);
-     screen.fillRoundRect(72, 102, 3, 15, 1, BLUE_RGB565);
-     screen.fillRoundRect(80, 105, 3, 15, 1, BLUE_RGB565);
+     tft.drawBitmap(0,35,cloud,128,90,ST77XX_WHITE);
+     tft.fillRoundRect(50, 105, 3, 15, 1, ST77XX_BLUE);
+     tft.fillRoundRect(57, 102, 3, 15, 1, ST77XX_BLUE);
+     tft.fillRoundRect(65, 105, 3, 15, 1, ST77XX_BLUE);
+     tft.fillRoundRect(72, 102, 3, 15, 1, ST77XX_BLUE);
+     tft.fillRoundRect(80, 105, 3, 15, 1, ST77XX_BLUE);
 }
 
 void drawHeavyRain()
 {
-     screen.drawBitmap(0,35,cloud,128,90,LIGHTGREY_RGB565);
-     screen.fillRoundRect(43, 102, 3, 15, 1, BLUE_RGB565);
-     screen.fillRoundRect(50, 105, 3, 15, 1, BLUE_RGB565);
-     screen.fillRoundRect(57, 102, 3, 15, 1, BLUE_RGB565);
-     screen.fillRoundRect(65, 105, 3, 15, 1, BLUE_RGB565);
-     screen.fillRoundRect(72, 102, 3, 15, 1, BLUE_RGB565);
-     screen.fillRoundRect(80, 105, 3, 15, 1, BLUE_RGB565);
-     screen.fillRoundRect(87, 102, 3, 15, 1, BLUE_RGB565);
+     tft.drawBitmap(0,35,cloud,128,90,ST77XX_WHITE);
+     tft.fillRoundRect(43, 102, 3, 15, 1, ST77XX_BLUE);
+     tft.fillRoundRect(50, 105, 3, 15, 1, ST77XX_BLUE);
+     tft.fillRoundRect(57, 102, 3, 15, 1, ST77XX_BLUE);
+     tft.fillRoundRect(65, 105, 3, 15, 1, ST77XX_BLUE);
+     tft.fillRoundRect(72, 102, 3, 15, 1, ST77XX_BLUE);
+     tft.fillRoundRect(80, 105, 3, 15, 1, ST77XX_BLUE);
+     tft.fillRoundRect(87, 102, 3, 15, 1, ST77XX_BLUE);
 }
 
 void drawThunderstorm()
 {
-     screen.drawBitmap(0,40,thunder,128,90,YELLOW_RGB565);
-     screen.drawBitmap(0,35,cloud,128,90,LIGHTGREY_RGB565);
-     screen.fillRoundRect(48, 102, 3, 15, 1, BLUE_RGB565);
-     screen.fillRoundRect(55, 102, 3, 15, 1, BLUE_RGB565);
-     screen.fillRoundRect(74, 102, 3, 15, 1, BLUE_RGB565);
-     screen.fillRoundRect(82, 102, 3, 15, 1, BLUE_RGB565);
+     tft.drawBitmap(0,40,thunder,128,90,ST77XX_YELLOW);
+     tft.drawBitmap(0,35,cloud,128,90,ST77XX_WHITE);
+     tft.fillRoundRect(48, 102, 3, 15, 1, ST77XX_BLUE);
+     tft.fillRoundRect(55, 102, 3, 15, 1, ST77XX_BLUE);
+     tft.fillRoundRect(74, 102, 3, 15, 1, ST77XX_BLUE);
+     tft.fillRoundRect(82, 102, 3, 15, 1, ST77XX_BLUE);
 }
 
 void drawLightSnowfall()
 {
-     screen.drawBitmap(0,30,cloud,128,90,LIGHTGREY_RGB565);
-     screen.fillCircle(50, 100, 3, LIGHTGREY_RGB565);
-     screen.fillCircle(65, 103, 3, LIGHTGREY_RGB565);
-     screen.fillCircle(82, 100, 3, LIGHTGREY_RGB565);
+     tft.drawBitmap(0,30,cloud,128,90,ST77XX_WHITE);
+     tft.fillCircle(50, 100, 3, ST77XX_WHITE);
+     tft.fillCircle(65, 103, 3, ST77XX_WHITE);
+     tft.fillCircle(82, 100, 3, ST77XX_WHITE);
 }
 
 void drawModerateSnowfall()
 {
-     screen.drawBitmap(0,35,cloud,128,90,LIGHTGREY_RGB565);
-     screen.fillCircle(50, 105, 3, LIGHTGREY_RGB565);
-     screen.fillCircle(50, 115, 3, LIGHTGREY_RGB565);
-     screen.fillCircle(65, 108, 3, LIGHTGREY_RGB565);
-     screen.fillCircle(65, 118, 3, LIGHTGREY_RGB565);
-     screen.fillCircle(82, 105, 3, LIGHTGREY_RGB565);
-     screen.fillCircle(82, 115, 3, LIGHTGREY_RGB565);
+     tft.drawBitmap(0,35,cloud,128,90,ST77XX_WHITE);
+     tft.fillCircle(50, 105, 3, ST77XX_WHITE);
+     tft.fillCircle(50, 115, 3, ST77XX_WHITE);
+     tft.fillCircle(65, 108, 3, ST77XX_WHITE);
+     tft.fillCircle(65, 118, 3, ST77XX_WHITE);
+     tft.fillCircle(82, 105, 3, ST77XX_WHITE);
+     tft.fillCircle(82, 115, 3, ST77XX_WHITE);
 }
 
 void drawHeavySnowfall()
 {
-     screen.drawBitmap(0,35,cloud,128,90,LIGHTGREY_RGB565);
-     screen.fillCircle(40, 105, 3, LIGHTGREY_RGB565);
-     screen.fillCircle(52, 105, 3, LIGHTGREY_RGB565);
-     screen.fillCircle(52, 115, 3, LIGHTGREY_RGB565);
-     screen.fillCircle(65, 108, 3, LIGHTGREY_RGB565);
-     screen.fillCircle(65, 118, 3, LIGHTGREY_RGB565);
-     screen.fillCircle(80, 105, 3, LIGHTGREY_RGB565);
-     screen.fillCircle(80, 115, 3, LIGHTGREY_RGB565);
-     screen.fillCircle(92, 105, 3, LIGHTGREY_RGB565);     
+     tft.drawBitmap(0,35,cloud,128,90,ST77XX_WHITE);
+     tft.fillCircle(40, 105, 3, ST77XX_WHITE);
+     tft.fillCircle(52, 105, 3, ST77XX_WHITE);
+     tft.fillCircle(52, 115, 3, ST77XX_WHITE);
+     tft.fillCircle(65, 108, 3, ST77XX_WHITE);
+     tft.fillCircle(65, 118, 3, ST77XX_WHITE);
+     tft.fillCircle(80, 105, 3, ST77XX_WHITE);
+     tft.fillCircle(80, 115, 3, ST77XX_WHITE);
+     tft.fillCircle(92, 105, 3, ST77XX_WHITE);     
 }
 
 void drawCloudSunAndRain()
 {
-     screen.fillCircle(73,70,20,YELLOW_RGB565);
-     screen.drawBitmap(0,32,cloud,128,90,BLACK_RGB565);
-     screen.drawBitmap(0,35,cloud,128,90,LIGHTGREY_RGB565);
-     screen.fillRoundRect(50, 105, 3, 13, 1, BLUE_RGB565);
-     screen.fillRoundRect(65, 105, 3, 13, 1, BLUE_RGB565);
-     screen.fillRoundRect(80, 105, 3, 13, 1, BLUE_RGB565);
+     tft.fillCircle(73,70,20,ST77XX_YELLOW);
+     tft.drawBitmap(0,32,cloud,128,90,ST77XX_BLACK);
+     tft.drawBitmap(0,35,cloud,128,90,ST77XX_WHITE);
+     tft.fillRoundRect(50, 105, 3, 13, 1, ST77XX_BLUE);
+     tft.fillRoundRect(65, 105, 3, 13, 1, ST77XX_BLUE);
+     tft.fillRoundRect(80, 105, 3, 13, 1, ST77XX_BLUE);
 }
 
 void drawCloudAndTheMoon()
 {
-     screen.fillCircle(94,60,18,LIGHTGREY_RGB565);
-     screen.fillCircle(105,53,18,BLACK_RGB565);
-     screen.drawBitmap(0,32,cloud,128,90,BLACK_RGB565);
-     screen.drawBitmap(0,35,cloud,128,90,LIGHTGREY_RGB565);
+     tft.fillCircle(94,60,18,ST77XX_WHITE);
+     tft.fillCircle(105,53,18,ST77XX_BLACK);
+     tft.drawBitmap(0,32,cloud,128,90,ST77XX_BLACK);
+     tft.drawBitmap(0,35,cloud,128,90,ST77XX_WHITE);
 }
 
 void drawCloudTheMoonAndRain()
 {
-     screen.fillCircle(94,60,18,LIGHTGREY_RGB565);
-     screen.fillCircle(105,53,18,BLACK_RGB565);
-     screen.drawBitmap(0,32,cloud,128,90,BLACK_RGB565);
-     screen.drawBitmap(0,35,cloud,128,90,LIGHTGREY_RGB565);
-     screen.fillRoundRect(50, 105, 3, 11, 1, BLUE_RGB565);
-     screen.fillRoundRect(65, 105, 3, 11, 1, BLUE_RGB565);
-     screen.fillRoundRect(80, 105, 3, 11, 1, BLUE_RGB565);
+     tft.fillCircle(94,60,18,ST77XX_WHITE);
+     tft.fillCircle(105,53,18,ST77XX_BLACK);
+     tft.drawBitmap(0,32,cloud,128,90,ST77XX_BLACK);
+     tft.drawBitmap(0,35,cloud,128,90,ST77XX_WHITE);
+     tft.fillRoundRect(50, 105, 3, 11, 1, ST77XX_BLUE);
+     tft.fillRoundRect(65, 105, 3, 11, 1, ST77XX_BLUE);
+     tft.fillRoundRect(80, 105, 3, 11, 1, ST77XX_BLUE);
 }
 
 void drawWind()
 {  
-     screen.drawBitmap(0,35,wind,128,90,LIGHTGREY_RGB565);   
+     tft.drawBitmap(0,35,wind,128,90,ST77XX_WHITE);   
 }
 
 void drawFog()
 {
-  screen.fillRoundRect(45, 60, 40, 4, 1, LIGHTGREY_RGB565);
-  screen.fillRoundRect(40, 70, 50, 4, 1, LIGHTGREY_RGB565);
-  screen.fillRoundRect(35, 80, 60, 4, 1, LIGHTGREY_RGB565);
-  screen.fillRoundRect(40, 90, 50, 4, 1, LIGHTGREY_RGB565);
-  screen.fillRoundRect(45, 100, 40, 4, 1, LIGHTGREY_RGB565);
+  tft.fillRoundRect(45, 60, 40, 4, 1, ST77XX_WHITE);
+  tft.fillRoundRect(40, 70, 50, 4, 1, ST77XX_WHITE);
+  tft.fillRoundRect(35, 80, 60, 4, 1, ST77XX_WHITE);
+  tft.fillRoundRect(40, 90, 50, 4, 1, ST77XX_WHITE);
+  tft.fillRoundRect(45, 100, 40, 4, 1, ST77XX_WHITE);
 }
 
 void clearIcon()
 {
-     screen.fillRect(0,40,128,100,BLACK_RGB565);
+     tft.fillRect(0,40,128,100,ST77XX_BLACK);
 }
 
 void drawCloud()
 {
-     screen.drawBitmap(0,35,cloud,128,90,LIGHTGREY_RGB565);
+     tft.drawBitmap(0,35,cloud,128,90,ST77XX_WHITE);
 }
 
 void drawCloudWithSun()
 {
-     screen.fillCircle(73,70,20,LIGHTGREY_RGB565);
-     screen.drawBitmap(0,36,cloud,128,90,BLACK_RGB565);
-     screen.drawBitmap(0,40,cloud,128,90,LIGHTGREY_RGB565);
+     tft.fillCircle(73,70,20,ST77XX_WHITE);
+     tft.drawBitmap(0,36,cloud,128,90,ST77XX_BLACK);
+     tft.drawBitmap(0,40,cloud,128,90,ST77XX_WHITE);
 }
 
 void drawLightRainWithSunOrMoon()
@@ -344,16 +343,16 @@ void printData(String temperature, int weatherID)
 
   printWeatherIcon(weatherID);
 
-  screen.setCursor(screen.width()/3,screen.height()/2);
-  screen.setTextColor(WHITE_RGB565);
-  screen.setTextSize(2);
-  screen.print(temperature);
-  screen.print("C");
+  tft.setCursor(tft.width()/3,tft.height()/2);
+  tft.setTextColor(ST77XX_WHITE);
+  tft.setTextSize(2);
+  tft.print(temperature);
+  tft.print("C");
 }
 
 void getweather() {
   //Send HTTP get request
-  connectToWifi();
+  //connectToWifi();
     //Check if WIFI is connected
     if(WiFi.status()== WL_CONNECTED){
       String serverPath = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "," + countryCode + "&APPID=" + openWeatherMapApiKey;
