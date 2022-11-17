@@ -37,11 +37,9 @@ Serial.print("\nConnected to");
 Serial.println(ssid);
 
 }
-
-
 void reconnect(){
   while(!client.connected()){
-    Serial.print("nConnected to");
+    Serial.print("\nConnected to");
     Serial.println(broker);
     if(client.connect("koikoikoi", brokerUser, brokerPass)){
       Serial.print("\nConnected to");
@@ -53,17 +51,11 @@ void reconnect(){
     }
   }
 }
- 
-
 void setup()
 {
   Serial.begin(115200);
   setupWifi();
   client.setServer(broker, 1883);
-
-
-
-
 }
 
   void loop()
@@ -84,16 +76,9 @@ if(currentTime - lastTime > 2000){
   client.publish(outTopic, messages);
   lastTime = millis();
 
-
-
-
-
 }
 
-
-
-
-  }
+}
   //end while
     
   

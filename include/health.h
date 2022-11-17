@@ -58,11 +58,11 @@ if(irValue > 7000){                                           //If a finger is d
                                     //Clear the tft
     tft.drawBitmap(0, 0, logo3_bmp, 32, 32, ST77XX_WHITE);    //Draw the second picture (bigger heart)
     tft.setTextSize(2);                                //And still tfts the average BPM
-    tft.setTextColor(ST77XX_WHITE);             
-    tft.setCursor(50,0);                
-    tft.println("BPM");             
-    tft.setCursor(50,18);                
-    tft.println(beatAvg); 
+    tft.setTextColor(ST77XX_WHITE);
+    tft.setCursor(50,0);
+    tft.println("BPM");
+    tft.setCursor(50,18);
+    tft.println(beatAvg);
    
     tone(3,1000);                                        //And tone the buzzer for a 100ms you can reduce it it will be better
     delay(100);

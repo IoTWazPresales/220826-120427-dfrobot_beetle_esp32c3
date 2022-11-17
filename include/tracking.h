@@ -23,7 +23,6 @@ void print_speed()
   {
    //String gps_speed = String(gps.speed.kmph());
     tft.setTextSize(1);
-    
     tft.setCursor(25, 5);
     tft.print("Lat: ");
     tft.setCursor(50, 5);

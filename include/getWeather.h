@@ -3,6 +3,8 @@
 #include "screenType.h"
 #include <ArduinoJson.h>
 #include "HTTP_Method.h"
+#include "Declarations.h"
+#include "Fissionblack.h"
 /*
 This example learns how to get weather information
 */
@@ -87,50 +89,50 @@ void cleartft()
 
 void drawTheSun()
 {
-    tft.fillCircle(64,80,26,ST77XX_YELLOW);
+    tft.fillCircle((240-52)/2,80,26,ST77XX_YELLOW);
 }
 
 void drawTheFullMoon()
 {
-    tft.fillCircle(64,80,26,ST77XX_WHITE);
+    tft.fillCircle((240-52)/2,80,26,ST77XX_WHITE);
 }
 
 void drawTheMoon()
 {
-    tft.fillCircle(64,80,26,ST77XX_WHITE);
-    tft.fillCircle(75,73,26,ST77XX_BLACK);
+    tft.fillCircle((240-52/2),80,26,ST77XX_WHITE);
+    tft.fillCircle(((240-52)/2)+11,73,26,ST77XX_BLACK);
 }
 
 
 
 void drawLightRain()
 {
-     tft.drawBitmap(0,35,cloud,128,90,ST77XX_WHITE);
-     tft.fillRoundRect(50, 105, 3, 13, 1, ST77XX_BLUE);
-     tft.fillRoundRect(65, 105, 3, 13, 1, ST77XX_BLUE);
-     tft.fillRoundRect(80, 105, 3, 13, 1, ST77XX_BLUE);
+     tft.drawBitmap(((240-128)/2)-50,35,cloud,128,90,ST77XX_WHITE);
+     tft.fillRoundRect(((240-3)/2)-15, 105, 3, 13, 1, ST77XX_BLUE);
+     tft.fillRoundRect(((240-3)/2), 105, 3, 13, 1, ST77XX_BLUE);
+     tft.fillRoundRect(((240-3)/2)+15, 105, 3, 13, 1, ST77XX_BLUE);
 }
 
 void drawModerateRain()
 {
-     tft.drawBitmap(0,35,cloud,128,90,ST77XX_WHITE);
-     tft.fillRoundRect(50, 105, 3, 15, 1, ST77XX_BLUE);
-     tft.fillRoundRect(57, 102, 3, 15, 1, ST77XX_BLUE);
-     tft.fillRoundRect(65, 105, 3, 15, 1, ST77XX_BLUE);
-     tft.fillRoundRect(72, 102, 3, 15, 1, ST77XX_BLUE);
-     tft.fillRoundRect(80, 105, 3, 15, 1, ST77XX_BLUE);
+     tft.drawBitmap(((240-128)/2)-50,35,cloud,128,90,ST77XX_WHITE);
+     tft.fillRoundRect(((240-3)/2)-15, 105, 3, 15, 1, ST77XX_BLUE);
+     tft.fillRoundRect(((240-3)/2)-8, 102, 3, 15, 1, ST77XX_BLUE);
+     tft.fillRoundRect(((240-3)/2), 105, 3, 15, 1, ST77XX_BLUE);
+     tft.fillRoundRect(((240-3)/2)+7, 102, 3, 15, 1, ST77XX_BLUE);
+     tft.fillRoundRect(((240-3)/2)+5, 105, 3, 15, 1, ST77XX_BLUE);
 }
 
 void drawHeavyRain()
 {
-     tft.drawBitmap(0,35,cloud,128,90,ST77XX_WHITE);
-     tft.fillRoundRect(43, 102, 3, 15, 1, ST77XX_BLUE);
-     tft.fillRoundRect(50, 105, 3, 15, 1, ST77XX_BLUE);
-     tft.fillRoundRect(57, 102, 3, 15, 1, ST77XX_BLUE);
-     tft.fillRoundRect(65, 105, 3, 15, 1, ST77XX_BLUE);
-     tft.fillRoundRect(72, 102, 3, 15, 1, ST77XX_BLUE);
-     tft.fillRoundRect(80, 105, 3, 15, 1, ST77XX_BLUE);
-     tft.fillRoundRect(87, 102, 3, 15, 1, ST77XX_BLUE);
+     tft.drawBitmap(((240-128)/2)-43,35,cloud,128,90,ST77XX_WHITE);
+     tft.fillRoundRect(((240-3)/2)-22, 102, 3, 15, 1, ST77XX_BLUE);
+     tft.fillRoundRect(((240-3)/2)-15, 105, 3, 15, 1, ST77XX_BLUE);
+     tft.fillRoundRect(((240-3)/2)-8, 102, 3, 15, 1, ST77XX_BLUE);
+     tft.fillRoundRect(((240-3)/2), 105, 3, 15, 1, ST77XX_BLUE);
+     tft.fillRoundRect(((240-3)/2)+7, 102, 3, 15, 1, ST77XX_BLUE);
+     tft.fillRoundRect(((240-3)/2)+15, 105, 3, 15, 1, ST77XX_BLUE);
+     tft.fillRoundRect(((240-3)/2)+22, 102, 3, 15, 1, ST77XX_BLUE);
 }
 
 void drawThunderstorm()

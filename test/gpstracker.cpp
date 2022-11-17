@@ -2,6 +2,10 @@
 #include <TinyGPS++.h>
 #include "screenType.h"
 SoftwareSerial GpsSerial(20, 21); //RX,TX
+//GPS pin VCC -> ESP32 C3 3v3
+//GPS pin GND -> ESP32 C3 GND
+//GPS pin TX  -> ESP32 C3 20
+//GPS pin RX  -> ESP32 C3 21
 
 TinyGPSPlus gps;
 int lastSeen_lat;

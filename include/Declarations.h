@@ -16,4 +16,8 @@
 #include "images.h"
 #include "tracking.h"
 #include "lora.h"
+#include "BLEpackage.h"
+#include "lvgl.h"
+
+
 #endif
