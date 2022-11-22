@@ -112,6 +112,7 @@ void setup(){
   //attachInterrupt(0, isr, FALLING);
   delay(1000);
   tft.init(240,240);
+  lv_init();
   delay(1000);
   BLEBegin();
   delay(1000);

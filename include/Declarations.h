@@ -4,6 +4,8 @@
 
 #include "Arduino.h"
 #include "ESP32Time.h"
+#include "lvgl.h"
+#include "Fissionblack.c"
 #include "Icons.h"
 #include "getTime.h"
 #include "getWeather.h"
@@ -17,7 +19,7 @@
 #include "tracking.h"
 #include "lora.h"
 #include "BLEpackage.h"
-#include "lvgl.h"
+
 
 
 #endif

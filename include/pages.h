@@ -1,9 +1,7 @@
 #ifndef PAGES
 #define PAGES
 #include "Declarations.h"
-#include "Icons.h"
-#include "images.h"
-#include "lvgl.h"
+
 
 
 
@@ -23,7 +21,7 @@ int h = tft.height();
 
 void sethomepage()
 {     
-    lv_init();
+
 
     LV_IMG_DECLARE(FissionBlack);
     lv_obj_t * FissionBlack_img = lv_img_create(lv_scr_act());//lv_scr_act()

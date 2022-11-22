@@ -4,7 +4,7 @@
 #include <ArduinoJson.h>
 #include "HTTP_Method.h"
 #include "Declarations.h"
-#include "Fissionblack.h"
+
 /*
 This example learns how to get weather information
 */
@@ -356,6 +356,10 @@ void getweather() {
   //Send HTTP get request
   //connectToWifi();
     //Check if WIFI is connected
+    LV_IMG_DECLARE(FissionBlack);
+    lv_obj_t * FissionBlack_img = lv_img_create(lv_scr_act());//lv_scr_act()
+    lv_img_set_src(FissionBlack_img, &FissionBlack);
+    lv_obj_set_size(FissionBlack_img, 240, 240);
     if(WiFi.status()== WL_CONNECTED){
       String serverPath = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "," + countryCode + "&APPID=" + openWeatherMapApiKey;
 
